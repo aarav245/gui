@@ -57,5 +57,8 @@ def bar():
 progressbar.pack()
 button = Button(screen,text="Start",command = bar)
 button.pack()
+#spinbox
+spinbox = Spinbox(screen,from_=0,to=20)
+spinbox.pack()
 
 screen.mainloop()
