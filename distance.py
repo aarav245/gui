@@ -1,0 +1,36 @@
+from tkinter import *
+screen = Tk()
+screen.geometry("600x400")
+def convert():
+    storage = float(entry1.get())
+    inconversion = storage * 0.393701
+    kmconversion = storage * 1000
+    miconversion = storage * 6.21371e-6
+    text1.delete("1.0",END)
+    text1.insert(END,inconversion)
+    text2.delete("1.0",END)
+    text2.insert(END,kmconversion)
+    text3.delete("1.0",END)
+    text3.insert(END,miconversion)
+    
+label1 = Label(screen,text = "Distance calculator", font = ("Arial",30),fg = "black",bg = "white")
+label1.pack()
+label2 = Label(screen,text = "Enter distance in cm:",font = ("Arial",15),fg = "black",bg = "white")
+label2.pack(side = LEFT,pady = (0,180))
+entry1 = Entry(screen, font = ("Arial",15))
+entry1.place(x=200,y=125)
+label3 = Label(screen,text = "in inches:",font = ("Arial",15),fg = "black",bg = "white")
+label3.place(x = 0, y = 250)
+text1 = Text(screen,width = 15, height=1)
+text1.place(x=100,y=250)
+label4 = Label(screen,text = "in km:",font = ("Arial",15),fg = "black",bg = "white")
+label4.place(x = 225, y = 250)
+text2 = Text(screen,width = 15, height=1)
+text2.place(x=290,y=250)
+label5 = Label(screen,text = "in mi:",font = ("Arial",15),fg = "black",bg = "white")
+label5.place(x = 400, y = 250)
+text3 = Text(screen,width = 15, height=1)
+text3.place(x=460,y=250)
+button1 = Button(screen,text = "calculate",font = ("Arial",15),fg = "white",bg = "green",command = convert)
+button1.pack(side = BOTTOM,padx=(0,200),pady = (0,50))
+screen.mainloop()
