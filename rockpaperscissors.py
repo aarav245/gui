@@ -38,6 +38,21 @@ def playerselect(playerselection):
     if playerselection == computerselection:
         tie()
     if playerselection[1] == 0:
+        if computerselection[1] == 1:
+            cpuwin()
+        if computerselection[1] == 2:
+            playerwin()
+    if playerselection[1] == 1:
+        if computerselection[1] == 0:
+            playerwin()
+        if computerselection[1] == 2:
+            cpuwin()
+    if playerselection[1] == 2:
+        if computerselection[1] == 0:
+            cpuwin()
+        if computerselection[1] == 1:
+            playerwin()
+
         
 win = Label(screen,text = "",font = ("Arial",15),fg = "green",bg = "white")
 win.pack()
@@ -45,11 +60,11 @@ option = Label(screen,text = "Your options:",font = ("Arial",15),fg = "black",bg
 option.place(x=30,y=100)
 buttonframe = Frame(screen)
 buttonframe.pack(pady = (30,0))
-button1 = Button(buttonframe, text = "Rock",font = ("Arial",15),fg = "White",bg = "pink")
+button1 = Button(buttonframe, text = "Rock",font = ("Arial",15),fg = "White",bg = "pink",command = lambda: playerselect(computerchoose[0]))
 button1.pack(side = LEFT,padx = 10)
-button2 = Button(buttonframe, text = "Paper",font = ("Arial",15),fg = "White",bg = "aqua")
+button2 = Button(buttonframe, text = "Paper",font = ("Arial",15),fg = "White",bg = "aqua",command = lambda: playerselect(computerchoose[0]))
 button2.pack(side = LEFT,padx = 10)
-button3 = Button(buttonframe, text = "Scissors",font = ("Arial",15),fg = "White",bg = "green")
+button3 = Button(buttonframe, text = "Scissors",font = ("Arial",15),fg = "White",bg = "green",command = lambda: playerselect(computerchoose[0]))
 button3.pack(side = LEFT,padx = 10)
 score = Label(screen,text = "Score:",font = ("Arial",15),fg = "black",bg = "white")
 score.place(x=30,y=200)
